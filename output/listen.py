@@ -13,18 +13,15 @@ try:
     while True:
         data = client.recv(size)
         if data:
-            print(data)
             info = data.decode("utf-8")
-            print(info)
             info = info.split()
             direction = info[0]
             num_cycles = info[1]
             print(direction)
             print(num_cycles)
-            #vibration_motors.alert(data)
-except RuntimeError as e:
+            vibration_motors.alert(direction, num_cycles)
+except:
     print("Closing socket")
     vibration_motors.clean_up()
     client.close()
     s.close()
-    print(e)
