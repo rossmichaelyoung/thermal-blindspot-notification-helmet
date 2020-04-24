@@ -16,7 +16,7 @@ try:
             print(data)
             vibration_motors.alert(data)
             #client.send(data)
-except KeyboardInterrupt:
+except:
     print("Closing socket")
     vibration_motors.clean_up()
     client.close()
