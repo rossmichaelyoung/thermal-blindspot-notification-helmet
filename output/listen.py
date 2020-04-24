@@ -14,10 +14,11 @@ try:
         data = client.recv(size)
         if data:
             print(data)
-            if len(data) > 2:
-                for i in data:
-                    print(i)
-                #vibration_motors.alert(data)
+            info = data.split()
+            print(info[0])
+            if len(info) > 1:
+                print(info[1])
+            #vibration_motors.alert(data)
 except:
     print("Closing socket")
     vibration_motors.clean_up()
