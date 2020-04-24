@@ -15,9 +15,10 @@ try:
         if data:
             print(data)
             info = data.split()
-            print(info[0][0])
-            if len(info) > 1:
-                print(info[1][0])
+            direction = chr(info[0])
+            num_cycles = int(info[1])
+            print(direction)
+            print(num_cycles)
             #vibration_motors.alert(data)
 except:
     print("Closing socket")
