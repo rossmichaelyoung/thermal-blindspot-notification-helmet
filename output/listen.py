@@ -15,8 +15,8 @@ try:
         if data:
             info = data.decode("utf-8")
             info = info.split()
-            direction = info[0]
-            num_cycles = info[1]
+            direction = str(info[0])
+            num_cycles = int(info[1])
             print(direction)
             print(num_cycles)
             vibration_motors.alert(direction, num_cycles)
