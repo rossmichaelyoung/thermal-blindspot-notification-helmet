@@ -20,9 +20,10 @@ try:
                 num_cycles = info[1]
                 print(direction)
                 print(num_cycles)
+                client.send(data)
                 #vibration_motors.alert(data)
-                #client.send(data)
-except:
+except RuntimeError as e:
+    print(e)
     print("Closing socket")
     vibration_motors.clean_up()
     client.close()
