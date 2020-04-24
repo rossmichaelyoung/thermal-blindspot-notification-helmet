@@ -22,7 +22,10 @@ def cycle(motor, num_cycles):
         off(motor)
         time.sleep(0.25)
         
-def alert(direction, num_cycles):
+def alert(packet):
+    info = packet[2:len(packet)-1].split()
+    direction = info[0]
+    num_cycles = info[1]
     if direction == "left":
         cycle(left_motor, num_cycles)
     elif direction == "right":
@@ -36,6 +39,7 @@ def alert(direction, num_cycles):
         t2.join()
     else:
         print("Direction not valid")
+
 
 def clean_up():
     GPIO.cleanup()

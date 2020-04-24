@@ -1,7 +1,7 @@
 import socket
 import vibration_motors
 
-hostMACAddress = 'B8:27:EB:FE:88:6E' # The MAC address of a Bluetooth adapter on the server.
+hostMACAddress = 'B8:27:EB:FE:88:6E' # The MAC address of a Bluetooth adapter on the server aka the pi zero.
 port = 1
 backlog = 1
 size = 1024
@@ -14,9 +14,9 @@ try:
         data = client.recv(size)
         if data:
             print(data)
-            #vibration_motors.alert(data)
+            vibration_motors.alert(data)
             #client.send(data)
-except:	
+except KeyboardInterrupt:
     print("Closing socket")
     vibration_motors.clean_up()
     client.close()
