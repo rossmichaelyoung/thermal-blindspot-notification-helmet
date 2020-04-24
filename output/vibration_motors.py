@@ -26,6 +26,8 @@ def alert(packet):
     info = packet[2:len(packet)-1].split()
     direction = info[0]
     num_cycles = info[1]
+    print(direction)
+    print(num_cycles)
     if direction == "left":
         cycle(left_motor, num_cycles)
     elif direction == "right":
