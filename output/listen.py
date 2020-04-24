@@ -13,6 +13,7 @@ try:
     while True:
         data = client.recv(size)
         if data:
+            data = data[2:len(data)-1]
             print(data)
             info = data.split()
             print(info[0])
