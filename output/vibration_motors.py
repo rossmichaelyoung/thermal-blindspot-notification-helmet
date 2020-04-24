@@ -29,16 +29,16 @@ def print_cycle(motor, num_cycles):
         
 def alert(direction, num_cycles):
     if direction == "left":
-        #cycle(left_motor, num_cycles)
-        print_cycle(left_motor, num_cycles)
+        cycle(left_motor, num_cycles)
+        #print_cycle(left_motor, num_cycles)
     elif direction == "right":
-        #cycle(right_motor, num_cycles)
-        print_cycle(right_motor, num_cycles)
+        cycle(right_motor, num_cycles)
+        #print_cycle(right_motor, num_cycles)
     elif direction == "center":
-        #t1 = threading.Thread(target=cycle, args=(left_motor, num_cycles,))
-        #t2 = threading.Thread(target=cycle, args=(right_motor, num_cycles,))
-        t1 = threading.Thread(target=print_cycle, args=(left_motor, num_cycles,))
-        t2 = threading.Thread(target=print_cycle, args=(right_motor, num_cycles,))
+        t1 = threading.Thread(target=cycle, args=(left_motor, num_cycles,))
+        t2 = threading.Thread(target=cycle, args=(right_motor, num_cycles,))
+        #t1 = threading.Thread(target=print_cycle, args=(left_motor, num_cycles,))
+        #t2 = threading.Thread(target=print_cycle, args=(right_motor, num_cycles,))
         t1.start()
         t2.start()
         t1.join()
