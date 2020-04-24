@@ -14,9 +14,10 @@ try:
         data = client.recv(size)
         if data:
             print(data)
+            data = data.decode("utf-8") 
             info = data.split()
-            direction = chr(info[0])
-            num_cycles = int(info[1])
+            direction = info[0]
+            num_cycles = info[0]
             print(direction)
             print(num_cycles)
             #vibration_motors.alert(data)

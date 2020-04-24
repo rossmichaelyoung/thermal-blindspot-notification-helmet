@@ -22,17 +22,12 @@ def cycle(motor, num_cycles):
         off(motor)
         time.sleep(0.25)
         
-def alert(data):
-    info = data.split()
-    direction = chr(info[0])
-    num_cycles = int(info[1])
-    print(direction)
-    print(num_cycles)
-    if direction == 'l':
+def alert(direction, num_cycles):
+    if direction == "left":
         cycle(left_motor, num_cycles)
-    elif direction == 'r':
+    elif direction == "right":
         cycle(right_motor, num_cycles)
-    elif direction == 'c':
+    elif direction == "center":
         t1 = threading.Thread(target=cycle, args=(left_motor, num_cycles,))
         t2 = threading.Thread(target=cycle, args=(right_motor, num_cycles,))
         t1.start()
