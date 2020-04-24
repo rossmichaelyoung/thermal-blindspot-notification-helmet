@@ -1,7 +1,7 @@
 import socket
 import vibration_motors
 
-hostMACAddress = 'DC:A6:32:6D:8B:D4' # The MAC address of a Bluetooth adapter on the server.
+hostMACAddress = 'B8:27:EB:FE:88:6E' # The MAC address of a Bluetooth adapter on the server.
 port = 1
 backlog = 1
 size = 1024
