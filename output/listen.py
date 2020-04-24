@@ -15,8 +15,8 @@ try:
         if data:
             print(data)
             if len(data) > 2:
-                info = data[2:len(data)-1].split()
-                print(info)
+                for i in data:
+                    print(i)
                 #vibration_motors.alert(data)
 except:
     print("Closing socket")
