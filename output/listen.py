@@ -11,10 +11,12 @@ s.listen(backlog)
 try:
     client, address = s.accept()
     while True:
-        data = client.recv(size)
-        if data:
-            print(data)
-            vibration_motors.alert(data)
+        packet = client.recv(size)
+        if packet:
+            info = packet[2:len(packet)-1].split()
+            direction = info[0]
+            num_cycles = info[1]
+            #vibration_motors.alert(data)
             #client.send(data)
 except:
     print("Closing socket")
