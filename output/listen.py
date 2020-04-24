@@ -13,12 +13,11 @@ try:
     while True:
         data = client.recv(size)
         if data:
-            data = data[2:len(data)-1]
             print(data)
             info = data.split()
-            print(info[0])
+            print(info[0][0])
             if len(info) > 1:
-                print(info[1])
+                print(info[1][0])
             #vibration_motors.alert(data)
 except:
     print("Closing socket")
