@@ -16,14 +16,9 @@ try:
             print(data)
             if len(data) > 2:
                 info = data[2:len(data)-1].split()
-                direction = info[0]
-                num_cycles = info[1]
-                print(direction)
-                print(num_cycles)
-                client.send(data)
+                print(info)
                 #vibration_motors.alert(data)
-except RuntimeError as e:
-    print(e)
+except:
     print("Closing socket")
     vibration_motors.clean_up()
     client.close()
