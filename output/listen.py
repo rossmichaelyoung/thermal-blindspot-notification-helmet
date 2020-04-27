@@ -19,6 +19,7 @@ try:
             num_cycles = int(info[1])
             print(direction)
             print(num_cycles)
+            print()
             vibration_motors.alert(direction, num_cycles)
 except:
     print("Closing socket")
