@@ -42,9 +42,10 @@ try:
                 t = frame[h*32 + w]
                 if t >= 30:
                     text = ""
-                    if w >= 0 and w <= 10:
+                    # using height instead of width because camera is fitted sideways on helmet
+                    if h >= 0 and h <= 7:
                         text = "right 3"
-                    elif w >= 11 and w <= 20:
+                    elif h >= 9 and h <= 15:
                         text = "center 3"
                     else:
                         text = "left 3"
