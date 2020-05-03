@@ -29,6 +29,7 @@ REFRESH_64_HZ
 mlx.refresh_rate = adafruit_mlx90640.RefreshRate.REFRESH_2_HZ
 frame = [0] * 768
 try:
+    client, address = s.accept()
     while True:
         try:
             mlx.getFrame(frame)
@@ -49,7 +50,8 @@ try:
                     else:
                         text = "right 3"
                     s.send(bytes(text, 'UTF-8'))
-                    time.sleep(0.5)
+                    data = client.recv(size)
+                    print(data)
             print()
         print()
 

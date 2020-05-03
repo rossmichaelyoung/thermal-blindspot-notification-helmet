@@ -21,6 +21,8 @@ try:
             print(num_cycles)
             print()
             vibration_motors.alert(direction, num_cycles)
+            time.sleep(0.5)
+            client.send(data)
 except:
     print("Closing socket")
     vibration_motors.clean_up()
