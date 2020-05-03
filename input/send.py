@@ -52,8 +52,6 @@ try:
                     s.send(bytes(text, 'UTF-8'))
                     data = client.recv(size)
                     print(data)
-            print()
-        print()
 
 except KeyboardInterrupt:
     print("Ctrl-C Pressed: Exiting Program")
