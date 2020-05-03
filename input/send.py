@@ -36,11 +36,10 @@ try:
             # these happen, no biggie - retry
             continue
         
-        found = false
+        found = False
         for h in range(24):
             for w in range(32):
                 t = frame[h*32 + w]
-                #print("%0.1f, " % t, end="")
                 if t >= 30:
                     text = ""
                     if h >= 0 and h <= 7:
@@ -50,10 +49,10 @@ try:
                     else:
                         text = "right 3"
                     s.send(bytes(text, 'UTF-8'))
-                    found = true
+                    found = True
                     time.sleep(3.5)
                     break
-                
+
             if found:
                 break
 
