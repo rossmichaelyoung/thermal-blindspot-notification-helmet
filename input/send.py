@@ -29,7 +29,6 @@ REFRESH_64_HZ
 mlx.refresh_rate = adafruit_mlx90640.RefreshRate.REFRESH_2_HZ
 frame = [0] * 768
 try:
-    client, address = s.accept()
     while True:
         try:
             mlx.getFrame(frame)
@@ -50,8 +49,7 @@ try:
                     else:
                         text = "right 3"
                     s.send(bytes(text, 'UTF-8'))
-                    data = client.recv(size)
-                    print(data)
+                    time.sleep(1)
 
 except KeyboardInterrupt:
     print("Ctrl-C Pressed: Exiting Program")
