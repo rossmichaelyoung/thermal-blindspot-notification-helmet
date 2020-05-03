@@ -35,7 +35,7 @@ try:
             for w in range(32):
                 t = frame[h*32 + w]
                 #print("%0.1f, " % t, end="")
-                if t > 33:
+                if t >= 30:
                     print("human detected!")
             print()
         print()
