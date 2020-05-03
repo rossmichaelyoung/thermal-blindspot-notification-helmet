@@ -42,12 +42,12 @@ try:
                 t = frame[h*32 + w]
                 if t >= 30:
                     text = ""
-                    if h >= 0 and h <= 7:
-                        text = "left 3"
-                    elif h >= 8 and h <= 15:
+                    if w >= 0 and h <= 9:
+                        text = "right 3"
+                    elif w >= 10 and h <= 21:
                         text = "center 3"
                     else:
-                        text = "right 3"
+                        text = "left 3"
                     s.send(bytes(text, 'UTF-8'))
                     found = True
                     time.sleep(2)
