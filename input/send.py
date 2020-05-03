@@ -49,6 +49,7 @@ try:
                     else:
                         text = "right 3"
                     s.send(bytes(text, 'UTF-8'))
+                    time.sleep(0.5)
             print()
         print()
 
