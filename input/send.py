@@ -49,7 +49,7 @@ try:
                     else:
                         text = "right 3"
                     s.send(bytes(text, 'UTF-8'))
-                    time.sleep(2)
+                    time.sleep(4)
 
 except KeyboardInterrupt:
     print("Ctrl-C Pressed: Exiting Program")
