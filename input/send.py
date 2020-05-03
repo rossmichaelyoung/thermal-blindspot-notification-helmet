@@ -50,7 +50,7 @@ try:
                         text = "right 3"
                     s.send(bytes(text, 'UTF-8'))
                     found = True
-                    time.sleep(3.5)
+                    time.sleep(2)
                     break
 
             if found:
