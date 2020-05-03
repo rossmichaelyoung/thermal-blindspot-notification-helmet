@@ -19,19 +19,25 @@ REFRESH_16_HZ
 REFRESH_32_HZ
 REFRESH_64_HZ
 '''
-mlx.refresh_rate = adafruit_mlx90640.RefreshRate.REFRESH_2_HZ
+mlx.refresh_rate = adafruit_mlx90640.RefreshRate.REFRESH_16_HZ
 
 frame = [0] * 768
-while True:
-    try:
-        mlx.getFrame(frame)
-    except ValueError:
-        # these happen, no biggie - retry
-        continue
+try:
+    while True:
+        try:
+            mlx.getFrame(frame)
+        except ValueError:
+            # these happen, no biggie - retry
+            continue
 
-    for h in range(24):
-        for w in range(32):
-            t = frame[h*32 + w]
-            print("%0.1f, " % t, end="")
+        for h in range(24):
+            for w in range(32):
+                t = frame[h*32 + w]
+                #print("%0.1f, " % t, end="")
+                if t > 33:
+                    print("human detected!")
+            print()
         print()
-    print()
+
+except KeyboardInterrupt:
+    print("Ctrl-C Pressed: Exiting Program")

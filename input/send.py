@@ -1,4 +1,5 @@
 import socket
+import mlx90640_thermal_camera
 
 serverMACAddress = 'B8:27:EB:FE:88:6E' # sending data to the pi zero
 port = 1
