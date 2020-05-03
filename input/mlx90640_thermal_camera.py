@@ -19,7 +19,8 @@ REFRESH_16_HZ
 REFRESH_32_HZ
 REFRESH_64_HZ
 '''
-mlx.refresh_rate = adafruit_mlx90640.RefreshRate.REFRESH_16_HZ
+# could not go higher than 2_HZ without errors
+mlx.refresh_rate = adafruit_mlx90640.RefreshRate.REFRESH_2_HZ
 
 frame = [0] * 768
 try:
