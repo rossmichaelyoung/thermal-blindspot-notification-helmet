@@ -42,9 +42,9 @@ try:
                 t = frame[h*32 + w]
                 if t >= 30:
                     text = ""
-                    if w >= 0 and h <= 9:
+                    if w >= 0 and w <= 9:
                         text = "right 3"
-                    elif w >= 10 and h <= 21:
+                    elif w >= 10 and w <= 21:
                         text = "center 3"
                     else:
                         text = "left 3"
@@ -52,7 +52,7 @@ try:
                     found = True
                     time.sleep(2)
                     break
-
+            
             if found:
                 break
 
