@@ -46,7 +46,7 @@ try:
                         text = "left 3"
                     elif h >= 8 and h <= 15:
                         text = "center 3"
-                    else
+                    else:
                         text = "right 3"
                     s.send(bytes(text, 'UTF-8'))
             print()
