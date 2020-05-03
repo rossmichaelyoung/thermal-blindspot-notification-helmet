@@ -18,7 +18,7 @@ def off(motor):
 def cycle(motor, num_cycles):
     for i in range(0, num_cycles):
         on(motor)
-        time.sleep(0.25)
+        time.sleep(0.75)
         off(motor)
         time.sleep(0.25)
         

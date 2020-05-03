@@ -51,7 +51,7 @@ try:
                         text = "left 3"
                     s.send(bytes(text, 'UTF-8'))
                     found = True
-                    time.sleep(2)
+                    time.sleep(3.1)
                     break
             
             if found:
