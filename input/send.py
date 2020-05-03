@@ -42,9 +42,9 @@ try:
                 t = frame[h*32 + w]
                 if t >= 30:
                     text = ""
-                    if w >= 0 and w <= 9:
+                    if w >= 0 and w <= 10:
                         text = "right 3"
-                    elif w >= 10 and w <= 21:
+                    elif w >= 11 and w <= 20:
                         text = "center 3"
                     else:
                         text = "left 3"
