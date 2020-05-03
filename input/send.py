@@ -35,7 +35,8 @@ try:
         except ValueError:
             # these happen, no biggie - retry
             continue
-
+        
+        found = false
         for h in range(24):
             for w in range(32):
                 t = frame[h*32 + w]
@@ -49,7 +50,12 @@ try:
                     else:
                         text = "right 3"
                     s.send(bytes(text, 'UTF-8'))
-                    time.sleep(4)
+                    found = true
+                    time.sleep(3.5)
+                    break
+                
+            if found:
+                break
 
 except KeyboardInterrupt:
     print("Ctrl-C Pressed: Exiting Program")
