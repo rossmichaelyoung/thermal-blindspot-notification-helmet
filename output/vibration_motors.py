@@ -2,8 +2,8 @@ import RPi.GPIO as GPIO
 import time
 import threading
 
-left_motor = 14
-right_motor = 16
+right_motor = 14
+left_motor = 16
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(left_motor, GPIO.OUT)
