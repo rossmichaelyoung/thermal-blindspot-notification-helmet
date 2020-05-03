@@ -43,9 +43,9 @@ try:
                 if t >= 30:
                     text = ""
                     # using height instead of width because camera is fitted sideways on helmet
-                    if h >= 0 and h <= 7:
+                    if h >= 0 and h <= 8:
                         text = "right 3"
-                    elif h >= 9 and h <= 15:
+                    elif h >= 9 and h <= 14:
                         text = "center 3"
                     else:
                         text = "left 3"
