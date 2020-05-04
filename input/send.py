@@ -36,26 +36,40 @@ try:
             # these happen, no biggie - retry
             continue
         
-        found = False
+        num_cycles = "4"
+        found_right = False
+        found_left = False
+        can_break = False
         for h in range(24):
             for w in range(32):
                 t = frame[h*32 + w]
                 if t >= 30:
-                    text = ""
                     # using height instead of width because camera is fitted sideways on helmet
-                    if h >= 0 and h <= 8:
-                        text = "right 3"
-                    elif h >= 9 and h <= 14:
-                        text = "center 3"
+                    if h >= 0 and h <= 11:
+                        found_right = True
+                        h = 11
+                        break
                     else:
-                        text = "left 3"
-                    s.send(bytes(text, 'UTF-8'))
-                    found = True
-                    time.sleep(3.1)
-                    break
-            
-            if found:
+                        found_left = True
+                        can_break = True
+                        break
+
+            if can_break:
                 break
+        
+        if found_right or found_left:
+            text = ""
+            if found_right and found_left:
+                text = "center " + num_cycles
+            elif found_right:
+                text = "right " + num_cycles
+            else:
+                text = "left " + num_cycles
+            s.send(bytes(text, 'UTF-8'))
+            cycle_length = 0.5
+            sleep_time = int(num_cycles) * cycle_length
+            time.sleep(sleep_time)
+
 
 except KeyboardInterrupt:
     print("Ctrl-C Pressed: Exiting Program")
